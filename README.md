@@ -85,7 +85,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 ## Publish checklist
 
 ```bash
+npm version patch
 npm run build
 npm pack --dry-run
-npm publish --access public
+git tag snackbar-v$(node -p "require('./package.json').version")
+git push origin main --tags
 ```
