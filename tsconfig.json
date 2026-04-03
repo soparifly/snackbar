@@ -25,10 +25,11 @@
     "examples/**/*.ts",
     "examples/**/*.tsx",
     "tsup.config.ts",
-    "vite.config.ts"
+    "vite.config.mts"
   ],
   "exclude": [
     "dist",
+    "demo-dist",
     "node_modules"
   ]
 }

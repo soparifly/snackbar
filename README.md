@@ -2,6 +2,10 @@
 
 Reusable snackbar provider and `useSnackbar` helpers built on top of `notistack` and MUI.
 
+[![Snackbar demo](https://raw.githubusercontent.com/soparifly/snackbar/main/assets/snackbar-demo.gif)](https://soparifly.github.io/snackbar/)
+
+Live demo: https://soparifly.github.io/snackbar/
+
 ## Standalone project
 
 This folder is self-contained and can be moved into its own repository without depending on the parent Next.js project.
@@ -10,6 +14,7 @@ This folder is self-contained and can be moved into its own repository without d
 npm install
 npm run dev
 npm run build
+npm run build:demo
 ```
 
 `npm run dev` starts a Vite demo app so you can verify the snackbar behavior in the browser while developing the package.
@@ -46,6 +51,14 @@ npm run dev
 ```
 
 Vite will open a browser URL where you can trigger each snackbar variant and verify stacking, dismissal, and countdown behavior.
+
+Create a production build of the demo app with:
+
+```bash
+npm run build:demo
+```
+
+The static files are generated in `demo-dist/` so they do not overwrite the library package output in `dist/`.
 
 Then use `useSnackbar` anywhere below the provider.
 
@@ -114,3 +127,19 @@ npm pack --dry-run
 git tag snackbar-v$(node -p "require('./package.json').version")
 git push origin main --tags
 ```
+
+## Demo deployment
+
+The demo app is configured for GitHub Pages on this repository.
+
+```bash
+npm run build:demo
+```
+
+After committing and pushing to `main`, GitHub Actions will build `demo-dist/` and deploy it to GitHub Pages. The expected demo URL is:
+
+```text
+https://soparifly.github.io/snackbar/
+```
+
+Before the first deployment, enable GitHub Pages in the repository settings and choose `GitHub Actions` as the source.

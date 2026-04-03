@@ -1,6 +1,6 @@
 {
   "name": "@kimbyulook/snackbar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reusable snackbar provider and notistack helpers for React and MUI projects.",
   "author": "Minimals",
   "sideEffects": false,
@@ -19,6 +19,11 @@
     },
     "./package.json": "./package.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soparifly/snackbar.git"
+  },
+  "homepage": "https://soparifly.github.io/snackbar/",
   "publishConfig": {
     "access": "public"
   },
@@ -27,6 +32,7 @@
     "clean": "rm -rf dist",
     "build": "tsup --config tsup.config.ts",
     "build:demo": "vite build",
+    "build:all": "npm run build && npm run build:demo",
     "prepack": "npm run build",
     "pack:dry-run": "npm pack --dry-run",
     "preview": "vite preview"
