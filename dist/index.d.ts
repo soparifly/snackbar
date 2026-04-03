@@ -1,12 +1,11 @@
-import * as notistack from 'notistack';
-import { SnackbarProviderProps } from 'notistack';
+import { SnackbarProviderProps, CustomContentProps } from 'notistack';
 export * from 'notistack';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as react from 'react';
 import { ReactNode } from 'react';
 import * as _emotion_styled from '@emotion/styled';
 import * as _mui_system from '@mui/system';
-import * as _mui_material_styles from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 
 type Props = Omit<SnackbarProviderProps, 'children' | 'TransitionComponent'> & {
     children: ReactNode;
@@ -14,10 +13,10 @@ type Props = Omit<SnackbarProviderProps, 'children' | 'TransitionComponent'> & {
 };
 declare function SnackbarProvider({ children, direction, maxSnack, preventDuplicate, autoHideDuration, variant, anchorOrigin, iconVariant, Components, action, ...other }: Props): react_jsx_runtime.JSX.Element;
 
-declare const StyledNotistack: _emotion_styled.StyledComponent<notistack.CustomContentProps & react.RefAttributes<HTMLDivElement> & _mui_system.MUIStyledCommonProps<_mui_material_styles.Theme>, {}, {}>;
+declare const StyledNotistack: _emotion_styled.StyledComponent<CustomContentProps & react.RefAttributes<HTMLDivElement> & _mui_system.MUIStyledCommonProps<Theme>, {}, {}>;
 type StyledIconProps = {
     color: 'info' | 'success' | 'warning' | 'error';
 };
-declare const StyledIcon: _emotion_styled.StyledComponent<_mui_system.MUIStyledCommonProps<_mui_material_styles.Theme> & StyledIconProps, react.DetailedHTMLProps<react.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, {}>;
+declare const StyledIcon: _emotion_styled.StyledComponent<_mui_system.MUIStyledCommonProps<Theme> & StyledIconProps, react.DetailedHTMLProps<react.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, {}>;
 
 export { SnackbarProvider, StyledIcon, StyledNotistack };

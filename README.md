@@ -2,6 +2,18 @@
 
 Reusable snackbar provider and `useSnackbar` helpers built on top of `notistack` and MUI.
 
+## Standalone project
+
+This folder is self-contained and can be moved into its own repository without depending on the parent Next.js project.
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+`npm run dev` starts a Vite demo app so you can verify the snackbar behavior in the browser while developing the package.
+
 ## Install
 
 ```bash
@@ -23,6 +35,17 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
   );
 }
 ```
+
+## Local demo
+
+Run the example app locally from this package root.
+
+```bash
+npm install
+npm run dev
+```
+
+Vite will open a browser URL where you can trigger each snackbar variant and verify stacking, dismissal, and countdown behavior.
 
 Then use `useSnackbar` anywhere below the provider.
 
@@ -65,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ## Customization
 
-`SnackbarProvider` forwards `notistack` provider props, and also accepts `direction` for RTL/LTR control.
+`SnackbarProvider` forwards `notistack` provider props, and also accepts `direction` for RTL/LTR control. Snackbars with `autoHideDuration` show a countdown progress border that tracks the remaining time.
 
 ```tsx
 <SnackbarProvider
